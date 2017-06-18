@@ -1,0 +1,103 @@
+div.menu {
+    height: auto;
+    background-color:#FF0000;
+    width: 100%;
+}
+
+.menu{
+    border:none;
+    margin:0px;
+    padding:0px;
+    font-size: 12px;
+    font-weight:bold;
+}
+.menu ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+    .menu li{
+        float:left;
+        padding:0px;
+    }
+    .menu li a{
+        background-color: #44BC3C;
+        width:157px; height: auto;  text-align: center;
+        font-family:"Times New Roman", Times, serif;
+        color: white;
+        display:block;
+        margin:0px;
+        padding:10px 0px 10px 0px;;
+        text-align:center;
+        text-decoration:none;
+        font-size: 12px;
+        vertical-align: middle;
+    }
+
+    .menu li ul{
+        display:none;
+        position:absolute;
+        z-index:112;
+        /*top:1em;
+        left:0;*/
+    }
+    .menu li:hover ul{
+        display:block;
+    }
+
+    .menu li li {
+        display:block;
+        float:none;
+        margin:0px;
+    }
+
+    li a.menu{width:108.88px; text-align: center;}
+
+    li a.ie{width:157px; text-align: center;}
+
+    .menu li ul a{
+        display:block;
+        font-size: 12px;
+        font-style:normal;
+        margin:0px;
+        text-align:center;
+    }
+        .menu ul li a:hover{
+            border:none;
+            text-decoration:none;
+            background-color:#000000;
+        }
+             .menu li ul li:hover a{
+                width:100%;
+                background-color:#000000;
+                border:0px;
+                text-decoration:none;
+            }
+         .menu li ul li a{
+            padding: 10px 0px 10px 0px;
+            width: 108px;
+            background-color:#000000;
+            border:0px;
+            text-decoration:none;
+
+        }
+    .menu {
+        clear:left;
+    }
+	
+a.menu {
+   text-decoration:none;
+   padding-top:0px;
+   color:white;
+   font-size: 12px;
+}
+/* Fix IE. Hide from IE Mac \*/
+/* End */
+
+a.menu:link, a.menu:active, a.menu:visited  {
+  color: white;
+}
+
+a.menu:hover {
+  color: white;
+}

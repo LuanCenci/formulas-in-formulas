@@ -1,0 +1,84 @@
+p{
+    color: #000;
+}
+
+#titulo {
+    font-family: Arial;
+    font-size: 22px;
+    font-weight: bold;
+    text-align:center;
+ }
+
+#nomes {
+    font-family: 'Times New Roman';
+    font-size: 10pt;
+    text-align: center;
+}
+
+#dados {
+    font-family: 'Times New Roman';
+    font-size: 13pt;
+    text-align: center;
+}
+
+#email {
+    font-family: 'Courier New';
+    font-size: 12px;
+    text-align: center;
+}
+
+.abstract{
+    font-family: 'Times New Roman';
+    font-size: 10pt;
+    text-align: justify;
+    font-style: italic;
+}
+
+.subtitulo
+{ 
+    font-family: 'Times New Roman';
+    font-size: 23px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.texto
+{    
+    font-family: Arial;
+    font-size: 14pt;
+    text-align: justify;
+    color: #000;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-weight: normal;
+}
+
+img
+{
+    object-position: center;
+    max-height: 367px;
+    max-width: 653px;
+    min-height: 180px;
+    min-width: 264px;
+}
+
+ div.figura 
+{
+  display:table;
+  width: 25%;
+  margin: 0.5em;
+  padding: 0.5em;
+  position: relative;
+  object-position:center;
+  margin-left: 20%;
+}
+
+div.figura p 
+{
+  text-align: center;
+  font-weight: bold;
+  font-size: 10pt;
+  font-family: Helvetica; 
+  color: #000;
+}
+

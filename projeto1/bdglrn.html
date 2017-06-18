@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title>teste</title>
+        <link href="css/estilo_modelos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo_artigo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="fundo">
+        <h1 class="titulo">Banco de Dados Para Gerenciamento de Veículos</h1><br>
+		
+		<h2 class="titulo">Modelo Conceitual</h2>
+				
+		  <img src="images/carros.jpg" alt="Modelo Conceitual do Banco de Dados">
+		
+		<h2 class="titulo">Modelo Lógico</h2>
+		
+		<div class="modelo_logico"><br/><br/>
+		fabricante(<br/>
+		*idFabricante,<br/>
+		nomeFabricante<br/>)<br/><br/>
+		
+		medidaFrente(<br/>
+		*idFrente,<br/>
+		comprimentoFrente,<br/>
+		alturaFrente,<br/>
+		comprimentoCapo,<br/>
+		alturaCapo,<br/>
+		comprimentoGrade,<br/>
+		alturaGrade<br/>)<br/><br/>
+		
+		medidaLateral(<br/>
+		*idLateral,<br/>
+		comprimentoLateral,<br/>
+		alturaLateral,<br/>
+		comprimentoPorta,<br/>
+		alturaPorta,<br/>
+		comprimentoJanela,<br/>
+		alturaJanela<br/>)<br/><br/>
+		
+		medidaInterior(<br/>
+		*idInterior,<br/>
+		comprimentoInterior,<br/>
+		alturaInterior,<br/>
+		larguraInterior,<br/>
+		comprimentoPainel,<br/>
+		alturaPainel,<br/>
+		comprimentoBancoDianteiro,<br/>
+		alturaBancoDianteiro,<br/>
+		larguraBancoDianteiro,<br/>
+		comprimentoBancoTraseiro,<br/>
+		alturaBancoTraseiro,<br/>
+		larguraBancoTraseiro<br/>)<br/><br/>
+		
+		medidaTraseira(<br/>
+		*idTraseiro,<br/>
+		comprimentoTraseira,<br/>
+		alturaTraseira,<br/>
+		comprimentoPortaMalas,<br/>
+		alturaPortaMalas,<br/>
+		entreEixos<br/>)<br/><br/>
+		
+		medidaDemais(<br/>
+		*idDemais,<br/>
+		capacidadePortaMalas,<br/>
+		alturaPortaMalas,<br/>
+		comprimentoPortaMalas,<br/>)<br/><br/>
+		
+		roda(*idRoda,aroRoda,materialRoda,raioRoda)<br/><br/>
+		
+		veiculo(<br/>
+		*idVeiculo,<br/>
+		modeloVeiculo,<br/>
+		motorVeiculo,<br/>
+		combustivelVeiculo,<br/>
+		carroceriaVeiculo,<br/>
+		corVeiculo,<br/>
+		idFabricante,<br/>
+		idfrente,<br/>
+		idLateral,<br/>
+		idTraseira,<br/>
+		idInterior,<br/>
+		idDemais,<br/>
+		idRoda<br/>)<br/>
+		idFabricante referencia a tabela fabricante<br/>
+		idFrente referencia a tabela medidaFrente<br/>
+		idLateral referencia a tabela medidaLateral<br/>
+		idTraseira referencia a tabela medidaTraseira<br/>
+		idDemais referencia a tabela medidaDemais<br/>
+		idRoda   referencia a tabela roda<br/><br/>
+		
+		motor(<br/>
+		idMotor,<br/>
+		modeloMotor,<br/>
+		cavalosMotor,<br/>
+		combustivelMotor<br/>
+		numeroMotor<br/>)<br/>
+		
+		
+		motorEveiculo(<br/>
+		*idVeiculo,<br/>
+		*idMotor,<br/>
+		)<br/>
+		idVeiculo referencia a tabela veiculo<br/>
+		idMotor referencia a tabela motor<br/>
+		</div>
+		
+               
+        
+    </body>
+</html>

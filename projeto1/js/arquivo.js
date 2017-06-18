@@ -1,0 +1,1 @@
+﻿// alert("Gluglu ie ie  pegadinha do malandro");

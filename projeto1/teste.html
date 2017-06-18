@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>teste</title>
+        <link href="css/estilo_modelos.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo_artigo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="fundo">
+        <h2 id="titulo_cbd">Cosmos Bancos de Dados</h2>
+        <h1 class="titulo">Teste</h1><br>
+               
+
+        <h3 class="titulo">Modelo Conceitual</h3>        
+        <div class="figura"><img src="images/tabelas_3.png" alt="tabela"></div>
+        <h3 class="titulo">Modelo Lógico</h3>
+        <div class="modelo_logico">
+             Pessoa(*id,nome,idade)<br/><br/>
+             Email(*IDE,Endereco,id_pessoa)<br />id_pessoa referencia Pessoa
+        </div><br>
+        <h3 class="titulo">Modelo Lógico Tabular</h3>
+        <div class="row">
+        <div class="span3">
+        <table class="modelo_tabular">
+            <thead>
+                <tr>
+                  <th>*ID</th>
+                  <th>Nome</th>
+                  <th>Idade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>01</td>
+                    <td>Luan</td>
+                    <td>21</td></tr>
+                <tr><td>02</td>
+                    <td>Lauana</td>
+                    <td>13</td></tr>
+                <tr><td>03</td>
+                    <td>Luana</td>
+                    <td>19</td></tr>
+                <tr><td>04</td>
+                    <td>Peter</td>
+                    <td>45</td></tr>
+                <tr><td>05</td>
+                    <td>Vader</td>
+                    <td>55</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="span3">
+        <table class="modelo_tabular">
+            <thead>
+                <tr>
+                  <th>*IDE</th>
+                  <th>Endereco</th>
+                  <th>ID_pessoa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>01</td>
+                    <td>luan@hotmail.com</td>
+                    <td>01</td></tr>
+                <tr><td>02</td>
+                    <td>vader@imperio.com</td>
+                    <td>05</td></tr>
+                <tr><td>03</td>
+                    <td>peter@quahog.com</td>
+                    <td>04</td></tr>
+                <tr><td>04</td>
+                    <td>vader.i@info.com.br</td>
+                    <td>05</td></tr>
+            </tbody>
+        </table>
+        </div></div><br>
+        <h3 class="titulo">Modelo de Direocionamento de Dados</h3>
+        <img src="images/DDD.png" alt="Modelo de Direocionamento de Dados">       
+
+        <h3 class="titulo">Dicionário de dados</h3>
+        <div class="dicionario_dados">
+            <b>Tabela Pessoa</b><br> 
+            @ id = {dígito} <br>
+            nome = {Caractere} <br><br>
+            
+            dígito = [ 0|1|2|3|4|5|6|7|8|9]<br>
+            Caractere =[a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|x|z|y] + [A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z]<br> 
+           <br> <b>Tabela Email</b><br>
+            @IDE = {dígito}<br>
+            Endereco = {Caractere}<br>
+        </div>
+        
+        <h3 class="titulo">Modelo Físico</h3>
+        <div class="modelo_fisico">
+            CREATE TABLE grupo(
+                   id SERIAL PRIMARY KEY,
+                   nome VARCHAR(250)   
+                );<br/><br/>
+                CREATE TABLE elementos(
+                    nAtomico SERIAL PRIMARY KEY,
+                    nome VARCHAR(100),
+                    simbolo VARCHAR(4),
+                    pontoDeFusao FLOAT,
+                    pontoDeEbulicao FLOAT,
+                    eletronegatividade FLOAT,
+                    massaAtomica FLOAT,
+                    id INTEGER REFERENCES grupo(id)
+                );
+        </div>
+        pppp
+        ppppp
+        pppp
+
+    </body>
+</html>

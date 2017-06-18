@@ -1,0 +1,49 @@
+.dicionario_dados{
+    font-family: 'Courier New';
+    font-size: medium 20px 20%;
+    text-align: left;
+    border: 5px solid #f00;  
+    color: #808080;  
+}
+
+.modelo_logico {
+    font-family: 'Courier New';
+    font-size:medium 20%;
+    text-align:left;
+    border: 5px solid  #808080;
+    color: #000000;
+}
+
+.modelo_fisico {
+    font-family: 'Courier New';
+    font-size: medium;
+    text-align: left;
+    border: 3px solid #b6ff00;
+    background-color: #fff;
+    color: #000;    
+}
+
+
+.modelo_tabular{
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #fff;
+    color: #000;
+    font-family: Ubuntu,'Ubuntu Mono';
+    text-indent:each-line;
+ }
+
+.modelo_tabular th{
+    background-color: #808080;
+    color: #000;
+    font-family: 'Courier New';
+    font-weight: bold;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.modelo_tabular td{
+    font-family: Ubuntu,'Ubuntu Mono';
+    border: 1px solid black;
+    border-collapse: collapse;
+}

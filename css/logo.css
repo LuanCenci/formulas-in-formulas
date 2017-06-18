@@ -1,0 +1,123 @@
+﻿body{
+    background-color:  #ffffff;
+}
+
+.tableLogo{
+    background-color:  #003153;
+    border: 1px solid  #003153;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    margin: 3 3 3 3;
+}
+
+.thLogo{
+    background-color: #ffffff;
+    font-size: 25px;
+    font-family: 'Futurama Bold Font'; 
+    color:  #FF0000;
+    border: 1px solid #ffffff;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+}
+
+.tdLogo{
+    background-color:  #FF0000;
+    font-size: 25px;
+    font-family: 'Futurama Bold Font'; 
+    color:  #FF0000;
+    border: 1px solid #000000;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-top: 1px; 
+}
+
+.celula1{
+    background-color:  #FF0000;
+    font-size: 25px;
+    font-family: 'Futurama Bold Font'; 
+    color:  #FF0000;
+    border: 1px solid #FF0000;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+}
+
+
+.celula2{
+    background-color:  #0000FF;
+    font-size: 25px;
+    font-family: 'Futurama Bold Font'; 
+    color:  #0000FF;
+    border: 1px solid #0000FF;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+   }
+
+
+.celula3{
+    background-color:  #FF00FF;
+    font-size: 25px;
+    font-family: 'Futurama Bold Font'; 
+    color:  #FF00FF;
+    border: 1px solid #FF00FF;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+   }
+
+.celula4{
+    background-color:  #FFFF00;
+    font-size: 25px;
+    font-family: 'Futurama Bold Font'; 
+    color:  #FFFF00;
+    border: 1px solid #FFFF00;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+   }
+
+.celula5{
+    background-color:  #000000;
+    font-size: 25px;
+    font-family: 'Futurama Bold Font'; 
+    color:  #000000;
+    border: 1px solid #000000;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+   }
+
+.celula6{
+    background-color:  #00FF00;
+    font-size: 25px;
+    font-family: 'Futurama Bold Font'; 
+    color:  #00FF00;
+    border: 1px solid #00FF00;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+   }
+
+.e{
+    background-color:  #003153;
+    font-size: 25px;
+    font-family: 'Futurama Bold Font'; 
+    color:   #003153;
+    border: 1px solid  #003153;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+   }
