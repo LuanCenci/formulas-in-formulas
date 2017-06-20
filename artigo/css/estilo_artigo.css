@@ -1,7 +1,11 @@
 body {
-    background-image: url('../img/vertical.png'); 
+<<<<<<< HEAD
+    background-color: white;      
+=======
+    background-color: white;
     background-repeat: repeat-y;
     background-position:  right;       
+>>>>>>> 5e3215d9c3d3d1cdb231871d5e66437c28c1dad3
 }
 
 #titulo {
@@ -118,6 +122,6 @@ td{
   color:#000000;
 }
 
-code {
+.code {
     text-align: justify
 }

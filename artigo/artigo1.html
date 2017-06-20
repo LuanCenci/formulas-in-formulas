@@ -1,354 +1,329 @@
-<!DOCTYPE html>
+<<<<<<< HEAD
+<html>
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Utilização De Integrais Para Cálculos De Áreas E Volumes Para Aeronaves  </title>
-        <link href="css/estilo_artigo.css" rel="stylesheet" type="text/css"/>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-      <div class="span4">
-      </div>
-      <div class="span7">
-        <h3 id="titulo">Utilização De Integrais Para Cálculos De Áreas E Volumes Para Aeronaves   </h3><br/>
+<head>
+<style type="text/css">
+.knitr .inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.rimage .left {
+  text-align: left;
+}
+.rimage .right {
+  text-align: right;
+}
+.rimage .center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.str {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.std {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Alguns dados sobre pilotos de Formula 1</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/estilo_artigo.css" rel="stylesheet" type="text/css"/>
+</head>
 
-        <p id="nomes">Luan Cenci<sup>1</sup> </p><br/>
+<body>    
+    <br>
+    <div class="navbar navbar-default">
+         <div class="navbar-inner">
+             <a class="brand" href="../index.html">Formula In Formulas</a>
+             <ul class="nav">
+                 <li><a href="../historico.html">Hist�rico</a></li>
+		             <li><a href="../projetos.html">Artigos</a></li>
+		             <li><a href="../contato.html">Contato</a></li>
+             </ul>
+         </div>
+</div>
+    <div class="span2"></div>    
+    <div class="span12">
+       <h3 id = "titulo">Alguns dados sobre pilotos de Formula 1</h3>
+       <p class = "texto">Para dar um pontap� inicial neste sitiozinho/blog/di�rio pessoal/ coisas que eu escrevo e espero que as pessoas gostem, vim trazer alguns dados sobre os pilotos da temporada 2017 do campeonato de formula 1. </p>
+       <p class = "texto">Em muitos casos alguns simples dados sobre os envolvidos no assunto em geral podem nos dizer muito sobre a categoria em si, e como ela est� nesta temporada j� iniciada a alguns meses.</p>
+       <p class="texto"></p>
+<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(readxl)</span>
+<span class="hl std">pilotos</span> <span class="hl kwb">&lt;-</span> <span class="hl std">readxl</span><span class="hl opt">::</span><span class="hl kwd">read_excel</span><span class="hl std">(</span><span class="hl str">&quot;C:/Users/Win7/Documents/arquivosR/pilotos.xlsx&quot;</span><span class="hl std">)</span>
+<span class="hl std">pilotos</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## # A tibble: 20 � 6
+##    numeracao              nome          equipe dataNascimento        pais
+##        &lt;dbl&gt;             &lt;chr&gt;           &lt;chr&gt;         &lt;dttm&gt;       &lt;chr&gt;
+## 1          2 Stoffel Vandoorne         McLaren     1992-03-26     B�lgica
+## 2          3  Daniel Ricciardo Red Bull Racing     1989-07-01   Austr�lia
+## 3          5  Sebastian Vettel         Ferrari     1987-07-03    Alemanha
+## 4         94   Pascal Wehrlein          Sauber     1994-10-18    Alemanha
+## 5         77   Valtteri Bottas        Mercedes     1989-08-28   Finlandia
+## 6         55  Carlos Sainz Jr.      Toro Rosso     1994-09-01     Espanha
+## 7         44    Lewis Hamilton        Mercedes     1985-01-07 Reino Unido
+## 8         33    Max Verstappen Red Bull Racing     1997-09-30     Holanda
+## 9         31      Esteban Ocon     Force India     1996-09-17      Fran�a
+## 10        30     Jolyon Palmer Renault F1 Team     1991-01-20 Reino Unido
+## 11        27   Nico Hulkenberg Renault F1 Team     1987-08-19    Alemanha
+## 12        26      Daniil Kvyat      Toro Rosso     1994-04-26      R�ssia
+## 13        20   Kevin Magnussen    Haas F1 Team     1992-10-05   Dinamarca
+## 14        19      Felipe Massa        Williams     1981-04-25      Brasil
+## 15        18      Lance Stroll        Williams     1998-10-29      Canad�
+## 16        14   Fernando Alonso         McLaren     1981-07-29     Espanha
+## 17        11      Sergio Perez     Force India     1990-01-26      M�xico
+## 18         9   Marcus Ericsson          Sauber     1990-09-02      Su�cia
+## 19         8   Romain Grosjean    Haas F1 Team     1986-04-17      Fran�a
+## 20         7    Kimi Raikkonen         Ferrari     1979-10-17   Finlandia
+## # ... with 1 more variables: titulos &lt;dbl&gt;
+</pre></div>
+</div></div>
 
-        <p id="dados">Instituto Federal de Educação, Ciência e Tecnologia Catarinense (IFC) - Campus Videira- Caixa Postal 89.560-000- Videira-SC-Brasil</p><br/>
-         
-        <p id="email">lcencicolo@gmail.com</p><br/>
+<p>You can also embed plots, for example:</p>
 
-        <p class="abstract"><b>Abstract.</b><i> In a world where air transport moves trillion a year, know the steps of the aircraft, where you is shown substantial.</i></p>
-        <p class="abstract"><b>Resumo.</b><i> Num mundo aonde o transporte aéreo movimenta trilhões ao ano, conhecer as medidas da aeronave, aonde você se encontra se mostra substancial. </i></p>
-        <p class="subtitulo">1.Introdução</p>
-        <p class="texto">Desde o primeiro voo em 1906, por Santos-Dumont, as aeronaves se tornaram um dos principais meios de transporte na atualidade, transportando desde de passageiros até cargas de tamanhos e capacidades gigantescos. Fabricamos hoje em dia, desde os pequenos veículos e que controlamos remotamente aos gigantes e monstruosas aeronaves Antonov. Sendo que em alguns casos, certos locais só podem ser acessados por aeronaves, o que os tornam de extrema utilidade aos usuários militares e civis. </p>
-        <p class="texto">Por utilizar aerodinâmica e a sua capacidade de voar e tornar possível a dominância do ser humano no ar, as aeronaves precisam de bastantes cálculos e medidas que sejam exatas e de modo que torne a aeronave totalmente útil, tanto no campo de batalha ou na ponte aérea Rio - São Paulo. Mas muitos cálculos que são utilizados pelos fabricantes vão de simples cálculos de áreas e de velocidade, indo até cálculos que necessitam de integrais e equações bem definidas, para se saber as grandezas envolvidas.</p>
-        <p class="subtitulo">2. Grandezas envolvidas</p>
-        <p class="texto">Em muitos casos, podemos calcular de uma aeronave as áreas e os volumes, e a velocidade que a mesma aeronave tem de voar e de também pode carregar carga utilizando as integrais. </p>
-        <p class="texto">Um caso que envolve o cálculo de área, podemos usar as áreas ocupadas por uma aeronave, como as próprias asas. Aeronaves podem apresentar diferentes formas e desenhos de asas, desde de desenhos com asas retas até utilizando enflechamento negativo. Isso depende muito da proposta da fabricante para a sua aeronave, de como ela vai cortar o ar e a aerodinâmica que se pretende que a mesma tenha.</p><br/>
-          <img src="img/667px-Wing_angles.jpg" alt="Os diferentes formatos de asas de diversas aeronaves.">
-          <p class="legenda">Os diferentes formatos de asas de diversas aeronaves.</p><br/>
-          <p class="texto">Isso poderia tornar difícil o cálculo da área de uma aeronave, e torna-lo bastante impreciso pois, os seus desenhos podem seguir diferentes formas, como as pontas da asa da aeronave fazem uma curva de praticamente 90<sup>o</sup> para o fim do desenho. Como sugerido por muitos, podemos calcular a aeronave usando o teorema de Pitágoras. Mas como citado neste mesmo parágrafo, o desenho pode dificultar esse tipo de cálculo. </p>
-          <img src="img/Untitled.jpg" alt="desenho da KC-390 da Embraer.">
-          <p class="legenda"> KC-390, aeronave usada como exemplo neste caso.</p><br/>
-          <p class="subtitulo">3.Integrando valores</p>
-          <p class="texto">A fórmula utilizada para calcular a área da asa de uma aeronave, é a integração utilizando a segunda regra de Simpson, com esta fórmula:</p>
-          <img src="img/lisa.jpg" alt="desenho da KC-390 da Embraer.">
-          <p class="texto">Para isso temos que dividir uma parte da aeronave em diversos pontos dentro de um plano cartesiano, assim podemos ter diversos pontos de X e Y e com mais precisão, essa medida foi feita na aeronave KC-390, mostrada na imagem acima, com a separação de pontos em pontos.</p>
-          <p class="legenda"> Pontos de X E Y, da asa da aeronave</p>
-          <table class="tabelas">
-              <tr>
-                <th class="tabelas">X</th>
-                <th class="tabelas">Y</th>
-              </tr>
-              <tr>
-                <td>-5,5</td>
-                <td>0.00</td>
-              </tr>
-              <tr>
-                <td>-5</td>
-                <td>0.69</td>
-              </tr>
-              <tr>
-                <td>-4,5</td>
-                <td>1.00</td>
-              </tr>
-              <tr>
-                <td>-4</td>
-                <td>1.29</td>
-              </tr>
-              <tr>
-                <td>-3,5</td>
-                <td>1.40</td>
-              </tr>
-              <tr>
-                <td>-3</td>
-                <td>1.89</td>
-              </tr>
-              <tr>
-                <td>-2,5</td>
-                <td>2.19</td>
-              </tr>
-              <tr>
-                <td>-2</td>
-                <td>2.30</td>
-              </tr>
-              <tr>
-                <td>-1,5</td>
-                <td>2,60</td>
-              </tr>
-              <tr>
-                <td>-1</td>
-                <td>2,90</td>
-              </tr>
-              <tr>
-                <td>-0,5</td>
-                <td>3,20</td>
-              </tr>
-              <tr>
-                <td>0</td>
-                <td>3.50</td>
-              </tr>
-              <tr>
-                <td>0,5</td>
-                <td>3,20</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2,90</td>
-              </tr>
-              <tr>
-                <td>1,5</td>
-                <td>2,60</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>2,30</td>
-              </tr>
-              <tr>
-                <td>2,5</td>
-                <td>2,19</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>1,89</td>
-              </tr>
-              <tr>
-                <td>3,5</td>
-                <td>1,40</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>1,29</td>
-              </tr>
-              <tr>
-                <td>4,5</td>
-                <td>1,00</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>0,69</td>
-              </tr>
-              <tr>
-                <td>5,5</td>
-                <td>0.00</td>
-              </tr>
-          </table><br/>
-          <p class="texto">Abaixo mostramos um gráfico com os pontos X's e Y's tirado das asas da aeronave:</p>
-          <img src="img/polygon1.jpeg" alt="Gráfico com o desenhos das Asas"><br>
-          <p class="texto">Com vontade de aumentar ainda mais a precisão deste cálculo e com vista de acelerar o processo do mesmo em si, foi montado uma função em R que realize a segunda regra de Simpson, a função Lisa, em referência ao seriado de televisão animado The Simpsons, recebe como entrada um vetor com os pontos de <b>Y</b>, e a amplitude <b>h</b> de seus subintervalos. </p>
+<div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="source"><pre class="knitr r">   <span class="hl kwd">library</span><span class="hl std">(ggplot2)</span>
+   <span class="hl std">pilotos</span><span class="hl opt">$</span><span class="hl std">pais</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##  [1] &quot;B�lgica&quot;     &quot;Austr�lia&quot;   &quot;Alemanha&quot;    &quot;Alemanha&quot;    &quot;Finlandia&quot;  
+##  [6] &quot;Espanha&quot;     &quot;Reino Unido&quot; &quot;Holanda&quot;     &quot;Fran�a&quot;      &quot;Reino Unido&quot;
+## [11] &quot;Alemanha&quot;    &quot;R�ssia&quot;      &quot;Dinamarca&quot;   &quot;Brasil&quot;      &quot;Canad�&quot;     
+## [16] &quot;Espanha&quot;     &quot;M�xico&quot;      &quot;Su�cia&quot;      &quot;Fran�a&quot;      &quot;Finlandia&quot;
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwc">data</span> <span class="hl std">= pilotos,</span><span class="hl kwd">aes</span><span class="hl std">(pais))</span><span class="hl opt">+</span> <span class="hl kwd">geom_bar</span><span class="hl std">()</span><span class="hl opt">+</span><span class="hl kwd">coord_flip</span><span class="hl std">()</span>
+</pre></div>
+</div><div class="rimage default"><img src="figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" class="plot" /></div></div>
 
-          <tt>lisa <- function(y,h){<br/><br/>
+<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r">   <span class="hl kwd">sum</span><span class="hl std">(pilotos</span><span class="hl opt">$</span><span class="hl std">titulos)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 10
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl kwd">mean</span><span class="hl std">(pilotos</span><span class="hl opt">$</span><span class="hl std">titulos)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 0.5
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl kwd">as.integer</span><span class="hl std">(</span><span class="hl kwd">difftime</span><span class="hl std">(</span><span class="hl kwd">Sys.time</span><span class="hl std">(),pilotos</span><span class="hl opt">$</span><span class="hl std">dataNascimento)</span><span class="hl opt">/</span><span class="hl num">365</span><span class="hl std">)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##  [1] 25 27 29 22 27 22 32 19 20 26 29 23 24 36 18 35 27 26 31 37
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl std">ggplot2</span><span class="hl opt">::</span><span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwc">data</span><span class="hl std">=pilotos,</span><span class="hl kwd">aes</span><span class="hl std">(</span><span class="hl kwd">as.integer</span><span class="hl std">(</span><span class="hl kwd">difftime</span><span class="hl std">(</span><span class="hl kwd">Sys.time</span><span class="hl std">(),pilotos</span><span class="hl opt">$</span><span class="hl std">dataNascimento)</span><span class="hl opt">/</span><span class="hl num">365</span><span class="hl std">)))</span><span class="hl opt">+</span><span class="hl kwd">geom_bar</span><span class="hl std">()</span>
+</pre></div>
+</div><div class="rimage default"><img src="figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" class="plot" /></div></div>
+
+<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r">  <span class="hl std">ggplot2</span><span class="hl opt">::</span><span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwc">data</span> <span class="hl std">= pilotos,</span><span class="hl kwd">aes</span><span class="hl std">(titulos))</span><span class="hl opt">+</span><span class="hl kwd">geom_bar</span><span class="hl std">()</span>
+</pre></div>
+</div><div class="rimage default"><img src="figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" class="plot" /></div></div>
+
+
+
+
   
-                soma <- 0 <br>
-                n <- length(y)<br><br/>
-  
-                for(i in 1:n){<br>
-                    if((i == 1)||(i == n)){<br>
-                    soma <- soma +y[i]<br>
-                   }else{<br>
-                      soma <- soma+(y[i]*3)<br>
-                    }<br><br/>
-               resultado <- soma * ((3*h)/8)<br>
-               return(resultado)<br><br/>
-              }<br>
-          </tt><br>
-
-          <p class="texto">Segundos os pontos mostrados acima, o valor total da área da asa da aeronave utilizando a função lisa é 23,8915 cm<sup>2</sup>, por utilizar um modelo em escala, os valores estão em centímetros. Mas como se percebe, existe uma área vazia entre a ponta das asas até a parte principal da sua fuselagem. Foi feito o mesmo procedimento para saber a área desse local, o resultado desse cálculo é 10,36688 cm<sup>2</sup>. A área da asa em si é de 13,494375 cm<sup>2</sup>.</p>
-          <p class="texto">Já na cauda da aeronave podemos ver que também aparece uma pequena asa, este tipo de asa é feito muitas vezes para que a própria a aeronave não perca estabilidade durante o voo, e voe em linha reta, como no caso das medidas a utilização ou não da cauda da aeronave vai depender do projeto proposto pela própria fabricante da aeronave em si. Também resolvemos saber qual era a área asa traseira da aeronave em si, localizada na cauda, assim, decidimos tirar os pontos e calcular. Veja os pontos tirados da asa traseira:</p>
-
-          <table class="tabelas">
-              <tr>
-                <th class="tabelas">X</th>
-                <th class="tabelas">Y</th>
-              </tr>
-              <tr>
-                  <td>-1,8</td><td>0,00</td>
-              </tr>
-              <tr>
-                  <td>-1,5</td><td>0,5</td>
-              </tr>
-              <tr>
-                  <td>-1,2</td><td>0,7</td>
-              </tr>
-
-              <tr>
-                  <td>-0,9</td><td>0,9</td>
-              </tr>
-              <tr>
-                  <td>-0,6</td><td>1,1</td>
-              </tr>
-              <tr>
-                  <td>-0,3</td><td>1,3</td>
-              </tr>
-              <tr>
-                  <td>0,0</td><td>1,5</td>
-              </tr>
-              <tr>
-                  <td>0,3</td><td>1,3</td>
-              </tr>
-              <tr>
-                  <td>0,6</td><td>1,1</td>
-              </tr>
-              <tr>
-                  <td>0,9</td><td>0,9</td>
-              </tr>
-              <tr>
-                  <td>1,2</td><td>0,7</td>
-              </tr>
-              <tr>
-                  <td>1,5</td><td>0,5</td>
-              </tr>
-              <tr>
-                  <td>1,8</td><td>0,00</td>
-              </tr>
-          </table><br/>
-
-          <p class="texto">Pegando os dados destes pontos e calculando da asa, que se encontra na parte de trás da aeronave, podemos ver que foi necessário encurtar os subintervalos entre as pontas e o centro da mesma, para que houvesse mais pontos para serem calculados pela função Lisa. A área da asa na cauda é de 3,54375cm<sup>2</sup>, o espaço vazio que se encontra na mesma é de 1,0125 cm<sup>2</sup> descontando um por outro podemos dizer que esta parte ocupa uma área de 2,53125 cm<sup>2</sup>.</p>
-          <p class="texto">Para demonstrar como a utilização de integrais em área para asa é muito preciso, fizemos o mesmo, mas numa aeronave com asas em delta, um caça de combate Douglas A-4E Skyhawk, utilizado pela Marinha Brasileira. E a asa tem área de 29.13188 cm<sup>2</sup>. E a sua asa na cauda é de 4.944375 cm<sup>2</sup>. Por ser uma asa em delta não é necessário calcular os espaços vazios que existem entre a fuselagem do caça e a ponta da asa.</p>
-          <p class="texto">Podemos calcular a altura das asas de uma ponta a outra da aeronave, sendo as próprias são muito finas para podermos calcular usando subintervalos menores, para isso foi usado a envergaduras da mesma para se calcular a sua altura. </p>
-          <br>
-          <table class="tabelas">
-              <tr>
-                <th class="tabelas">X</th>
-                <th class="tabelas">Y</th>
-              </tr>
-              <tr>
-                  <td>-5,00</td><td> 1.50</td>
-              </tr>
-              <tr>
-                  <td>0,00</td><td>1,70</td>
-              </tr>
-              <tr>
-                  <td>5,00</td><td> 1.50</td>
-              </tr>
-        </table><br/>
-          <p class="texto">Utilizando a segunda forma de Simpson, podemos ver abaixo o seu resultado, aplicando, num dos exemplos dos pontos da própria aeronave.</p>
-          <img src="img/calculoSimpson.jpg" alt="Um exemplo do cálculo da segunda formula de Simpson aplicado">
-          <br>
-          <p class="subtitulo">4. Volumes</p>
-          <p class="texto">Para se calcular os volumes dentro do compartimento de carga desta aeronave, podemos tentar diversos tipos de técnicas, temos desde de encher o compartimento de água o que poderia tomar a possível medida totalmente imprecisa pois a agua pode entrar e ocupar lugares aonde necessariamente aonde não seria colocado cargas de dentro do mesmo, ou poderias se colocar encher o compartimento de EPS (Poliestireno Expandido) com tamanhos conhecido isso, o que poderia tornar também o cálculo impreciso.</p>
-          <p class="texto">Outra técnica que podemos utilizar, que faça menos bagunça, é usar integrais duplas ou até mesmo triplas. Tendo os pontos X’s e Y’s podemos descobrir a área do objeto a ser estudado e os volumes.</p>
-          <p class="texto">Para tornar ainda mais preciso, foi utilizada uma função em R para fazer isso. Maggie faz a segunda formula de Simpson, duplamente, utilizando a função abaixo.</p>
-          <tt>maggie <- function(x,y,h){<br><br>
-  
-                  n <- length(x)<br>
-                  n1 <- length(y)<br>
-                  teste <- c()<br>
-                  fy <- c()<br>
-                  i <- 1<br>
-                  j <- 1<br><br>
-  
-                  for (i in i:n){<br>
-                    fx <-  x[i]*1.3<br>
-                    for (j in j:n1){<br>
-                      fy[j] <- fx*y[j]<br>
-                      cat(j,fy[j],"\n")<br>
-                    }<br>
-                    j <- 1<br>
-                    cat("------------------------\n")<br>
-                    teste[i] <- lisa(fy,h)<br>
-                    lisa(fy,h)<br>
-                  }<br>
-                  resultado <- lisa(teste,h)<br><br>
-  
-                  return(resultado)<br>
-                }<br><br>
-          </tt>
-          <p class="texto">Utilizando as imagens disponibilizadas pela Embraer Defesa e Segurança, podemos saber o desenho do compartimento de carga da aeronave KC-390, que é usada de exemplo neste cálculo:</p>
-          <img src="img/img_performance_medidas_internas.jpg" alt="Desenho do compartimento de Carga.">     
-          <p class="legenda"> Desenho do compartimento de Carga.</p>     
-          <p class="texto">Separamos este mesmo compartimento de carga em duas seções diferentes, uma delas que vai logo após o cockpit até a abertura traseira, para os soldados e as cargas até os e outra que vai da abertura até a cauda da mesma.</p>
-          <p class="texto">Apresentamos as medidas abaixo:</p>
-          <table>
-              <tr>
-                <th class="tabelas">X</th>
-                <th class="tabelas">Y</th>
-              </tr>
-              <tr>
-                <td>0</td>
-                <td>1,1</td>
-              </tr>
-              <tr>
-                <td>0,5</td>
-                <td>1,1</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>1,1</td>
-              </tr>
-              <tr>
-                <td>1,5</td>
-                <td>1,1</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>1,1</td>
-              </tr>
-              <tr>
-                <td>2,5</td>
-                <td>1,2</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>1,1</td>
-              </tr>
-              <tr>
-                <td>3,5</td>
-                <td>1,2</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>1,2</td>
-              </tr>
-          </table><br>
-          <p class="texto">na tabela abaixo podemos ver os pontos de X e Y da segunda seção: </p>
-          <table>
-              <tr>
-                <th class="tabelas">X</th>
-                <th class="tabelas">Y</th>
-              </tr>
-              <tr>
-                <td>0</td>
-                <td>0.00</td>
-              </tr>
-              <tr>
-                <td>0,5</td>
-                <td> 0,01 </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>0,10</td>
-              </tr>
-              <tr>
-                <td>1,5</td>
-                <td>0,25 </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>0,40</td>
-              </tr>
-              <tr>
-                <td>2,5</td>
-                <td>0,60 </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>0,90</td>
-              </tr>
-          </table><br>
-          <p class="texto">Usando os pontos que foram tirados pelos desenhos e a função Maggie podemos saber o volume que as duas seções apresentam, sendo que a primeira seção é de 55,29164 cm<sup>3</sup>, e o da segunda seção é de 5,80384 cm<sup>3</sup>, somando as duas seções teremos 61.09548 cm<sup>3</sup>, que em litros dá 61095,48.</p>
-          <p class="subtitulo">5. Conclusão</p>
-          <p class="texto">A utilização de integrais para cálculos em aeronaves se mostra como de muito ajuda no momento de descobrir as medidas de cada aeronave, que existem no mundo desde o KC-390 usado como exemplo neste artigo até as gigantescas aeronaves Antonov da antiga era soviética. Isso pode ser usado desde as forças aéreas ao redor do mundo como por fabricantes de aeronaves.</p>
-          <p class="subtitulo">Referencias</p>
-          <p>EMBRAER S.A. (São Paulo). <b>KC-390.</b> 2012. Disponível em: <http://www.embraerds.com/portugues/content/cargo/overview.asp>. Acesso em: 23 maio 2016.</p>
-          <p> FERNADES, Cynthia; BATISTA, Bruno. KC-390 : O céu é o Limite.<b> Aerovisão</b>: A Revista da Força Aérea Brasileira, Brasilia, p.14-18, 08 abr. 2016. Mensal. Disponível em: <http://www.fab.mil.br/publicacao/listagemAerovisao>. Acesso em: 23 maio 2016.</p>
-          <p> PECCINI, Jussara. Inovação à Brasileira. <b>Aerovisão</b>: A Revista da Força Aérea Brasileira, Brasília, p.21-23, 08 abr. 2016. Mensal. Disponível em: <http://www.fab.mil.br/publicacao/listagemAerovisao>. Acesso em: 23 maio 2016.</p>
-          <p> PRESS, William H. et al. <b>Métodos Numéricos Aplicados</b>: Rotinas em C++. 3. ed. Porto Alegre: Bookman, 2011. 1261 p.</p>
-          <p> CRAN (Estados Unidos).<b> The Comprehensive R Archive Network</b>. Disponível em: <https://cran.r-project.org/index.html>. Acesso em: 23 maio 2016.</p>
-        </div>
-        <div class="span3">
-        </div>
-    </body>
+</div>    
+</body>
 </html>
+=======
+<html>
+
+<head>
+<style type="text/css">
+.knitr .inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.rimage .left {
+  text-align: left;
+}
+.rimage .right {
+  text-align: right;
+}
+.rimage .center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.str {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.std {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset= utf-8" />
+    <title>Alguns dados sobre pilotos de Formula 1</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/estilo_artigo.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>    
+    <br>
+    <div class="navbar navbar-default">
+         <div class="navbar-inner">
+             <a class="brand" href="../index.html">Formula In Formulas</a>
+             <ul class="nav">
+                 <li><a href="../historico.html">Histórico</a></li>
+		             <li><a href="../projetos.html">Artigos</a></li>
+		             <li><a href="../contato.html">Contato</a></li>
+             </ul>
+         </div>
+</div>
+    <div class="span2"></div>    
+    <div class="span12">
+       <h3 id = "titulo">Alguns dados sobre pilotos de Formula 1</h3>
+       <p class = "texto">Para dar um pontapé inicial neste sitiozinho/blog/diário pessoal/ coisas que eu escrevo e espero que as pessoas gostem, vim trazer alguns dados sobre os pilotos da temporada 2017 do campeonato de formula 1. </p>
+       <p class = "texto">Em muitos casos alguns simples dados sobre os envolvidos no assunto em geral podem nos dizer muito sobre a categoria em si, e como ela está nesta temporada já iniciada a alguns meses.</p>
+       <p class="texto"></p>
+<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(readxl)</span>
+<span class="hl std">pilotos</span> <span class="hl kwb">&lt;-</span> <span class="hl std">readxl</span><span class="hl opt">::</span><span class="hl kwd">read_excel</span><span class="hl std">(</span><span class="hl str">&quot;C:/Users/Win7/Documents/arquivosR/pilotos.xlsx&quot;</span><span class="hl std">)</span>
+<span class="hl std">pilotos</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## # A tibble: 20 × 6
+##    numeracao              nome          equipe dataNascimento        pais
+##        &lt;dbl&gt;             &lt;chr&gt;           &lt;chr&gt;         &lt;dttm&gt;       &lt;chr&gt;
+## 1          2 Stoffel Vandoorne         McLaren     1992-03-26     Bélgica
+## 2          3  Daniel Ricciardo Red Bull Racing     1989-07-01   Austrália
+## 3          5  Sebastian Vettel         Ferrari     1987-07-03    Alemanha
+## 4         94   Pascal Wehrlein          Sauber     1994-10-18    Alemanha
+## 5         77   Valtteri Bottas        Mercedes     1989-08-28   Finlandia
+## 6         55  Carlos Sainz Jr.      Toro Rosso     1994-09-01     Espanha
+## 7         44    Lewis Hamilton        Mercedes     1985-01-07 Reino Unido
+## 8         33    Max Verstappen Red Bull Racing     1997-09-30     Holanda
+## 9         31      Esteban Ocon     Force India     1996-09-17      França
+## 10        30     Jolyon Palmer Renault F1 Team     1991-01-20 Reino Unido
+## 11        27   Nico Hulkenberg Renault F1 Team     1987-08-19    Alemanha
+## 12        26      Daniil Kvyat      Toro Rosso     1994-04-26      Rússia
+## 13        20   Kevin Magnussen    Haas F1 Team     1992-10-05   Dinamarca
+## 14        19      Felipe Massa        Williams     1981-04-25      Brasil
+## 15        18      Lance Stroll        Williams     1998-10-29      Canadá
+## 16        14   Fernando Alonso         McLaren     1981-07-29     Espanha
+## 17        11      Sergio Perez     Force India     1990-01-26      México
+## 18         9   Marcus Ericsson          Sauber     1990-09-02      Suécia
+## 19         8   Romain Grosjean    Haas F1 Team     1986-04-17      França
+## 20         7    Kimi Raikkonen         Ferrari     1979-10-17   Finlandia
+## # ... with 1 more variables: titulos &lt;dbl&gt;
+</pre></div>
+</div></div>
+
+<p>You can also embed plots, for example:</p>
+
+<div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="source"><pre class="knitr r">   <span class="hl kwd">library</span><span class="hl std">(ggplot2)</span>
+   <span class="hl std">pilotos</span><span class="hl opt">$</span><span class="hl std">pais</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##  [1] &quot;Bélgica&quot;     &quot;Austrália&quot;   &quot;Alemanha&quot;    &quot;Alemanha&quot;    &quot;Finlandia&quot;  
+##  [6] &quot;Espanha&quot;     &quot;Reino Unido&quot; &quot;Holanda&quot;     &quot;França&quot;      &quot;Reino Unido&quot;
+## [11] &quot;Alemanha&quot;    &quot;Rússia&quot;      &quot;Dinamarca&quot;   &quot;Brasil&quot;      &quot;Canadá&quot;     
+## [16] &quot;Espanha&quot;     &quot;México&quot;      &quot;Suécia&quot;      &quot;França&quot;      &quot;Finlandia&quot;
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwc">data</span> <span class="hl std">= pilotos,</span><span class="hl kwd">aes</span><span class="hl std">(pais))</span><span class="hl opt">+</span> <span class="hl kwd">geom_bar</span><span class="hl std">()</span><span class="hl opt">+</span><span class="hl kwd">coord_flip</span><span class="hl std">()</span>
+</pre></div>
+</div><div class="rimage default"><img src="figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" class="plot" /></div></div>
+
+<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r">   <span class="hl kwd">sum</span><span class="hl std">(pilotos</span><span class="hl opt">$</span><span class="hl std">titulos)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 10
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl kwd">mean</span><span class="hl std">(pilotos</span><span class="hl opt">$</span><span class="hl std">titulos)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 0.5
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl kwd">as.integer</span><span class="hl std">(</span><span class="hl kwd">difftime</span><span class="hl std">(</span><span class="hl kwd">Sys.time</span><span class="hl std">(),pilotos</span><span class="hl opt">$</span><span class="hl std">dataNascimento)</span><span class="hl opt">/</span><span class="hl num">365</span><span class="hl std">)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##  [1] 25 27 29 22 27 22 32 19 20 26 29 23 24 36 18 35 27 26 31 37
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl std">ggplot2</span><span class="hl opt">::</span><span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwc">data</span><span class="hl std">=pilotos,</span><span class="hl kwd">aes</span><span class="hl std">(</span><span class="hl kwd">as.integer</span><span class="hl std">(</span><span class="hl kwd">difftime</span><span class="hl std">(</span><span class="hl kwd">Sys.time</span><span class="hl std">(),pilotos</span><span class="hl opt">$</span><span class="hl std">dataNascimento)</span><span class="hl opt">/</span><span class="hl num">365</span><span class="hl std">)))</span><span class="hl opt">+</span><span class="hl kwd">geom_bar</span><span class="hl std">()</span>
+</pre></div>
+</div><div class="rimage default"><img src="figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" class="plot" /></div></div>
+
+<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r">  <span class="hl std">ggplot2</span><span class="hl opt">::</span><span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwc">data</span> <span class="hl std">= pilotos,</span><span class="hl kwd">aes</span><span class="hl std">(titulos))</span><span class="hl opt">+</span><span class="hl kwd">geom_bar</span><span class="hl std">()</span>
+</pre></div>
+</div><div class="rimage default"><img src="figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" class="plot" /></div></div>
+
+
+
+
+  
+</div>    
+</body>
+</html>
+>>>>>>> 5e3215d9c3d3d1cdb231871d5e66437c28c1dad3
