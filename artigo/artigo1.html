@@ -63,10 +63,12 @@
   font-weight: bold;
 }
 </style>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="Iso-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=Iso-8859-1" />
     <title>Alguns dados sobre pilotos de Formula 1</title>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/estilo_artigo.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>    
@@ -81,10 +83,12 @@
              </ul>
          </div>
 </div>
-    
-
-       <h3>teste de r html</h3>
-       <p>eu acho que esta funcionando</p>
+    <div class="span2"></div>    
+    <div class="span12">
+       <h3 id = "titulo">Alguns dados sobre pilotos de Formula 1</h3>
+       <p class = "texto">Para dar um pontapé inicial neste sitiozinho/blog/diário pessoal/ coisas que eu escrevo e espero que as pessoas gostem, vim trazer alguns dados sobre os pilotos da temporada 2017 do campeonato de formula 1. </p>
+       <p class = "texto">Em muitos casos alguns simples dados sobre os envolvidos no assunto em geral podem nos dizer muito sobre a categoria em si, e como ela está nesta temporada já iniciada a alguns meses.</p>
+       <p class="texto"></p>
 <div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(readxl)</span>
 <span class="hl std">pilotos</span> <span class="hl kwb">&lt;-</span> <span class="hl std">readxl</span><span class="hl opt">::</span><span class="hl kwd">read_excel</span><span class="hl std">(</span><span class="hl str">&quot;C:/Users/Win7/Documents/arquivosR/pilotos.xlsx&quot;</span><span class="hl std">)</span>
 <span class="hl std">pilotos</span>
@@ -130,5 +134,30 @@
 </pre></div>
 </div><div class="rimage default"><img src="figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" class="plot" /></div></div>
 
+<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r">   <span class="hl kwd">sum</span><span class="hl std">(pilotos</span><span class="hl opt">$</span><span class="hl std">titulos)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 10
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl kwd">mean</span><span class="hl std">(pilotos</span><span class="hl opt">$</span><span class="hl std">titulos)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 0.5
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl kwd">as.integer</span><span class="hl std">(</span><span class="hl kwd">difftime</span><span class="hl std">(</span><span class="hl kwd">Sys.time</span><span class="hl std">(),pilotos</span><span class="hl opt">$</span><span class="hl std">dataNascimento)</span><span class="hl opt">/</span><span class="hl num">365</span><span class="hl std">)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##  [1] 25 27 29 22 27 22 32 19 20 26 29 23 24 36 18 35 27 26 31 37
+</pre></div>
+<div class="source"><pre class="knitr r">   <span class="hl std">ggplot2</span><span class="hl opt">::</span><span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwc">data</span><span class="hl std">=pilotos,</span><span class="hl kwd">aes</span><span class="hl std">(</span><span class="hl kwd">as.integer</span><span class="hl std">(</span><span class="hl kwd">difftime</span><span class="hl std">(</span><span class="hl kwd">Sys.time</span><span class="hl std">(),pilotos</span><span class="hl opt">$</span><span class="hl std">dataNascimento)</span><span class="hl opt">/</span><span class="hl num">365</span><span class="hl std">)))</span><span class="hl opt">+</span><span class="hl kwd">geom_bar</span><span class="hl std">()</span>
+</pre></div>
+</div><div class="rimage default"><img src="figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" class="plot" /></div></div>
+
+<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r">  <span class="hl std">ggplot2</span><span class="hl opt">::</span><span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwc">data</span> <span class="hl std">= pilotos,</span><span class="hl kwd">aes</span><span class="hl std">(titulos))</span><span class="hl opt">+</span><span class="hl kwd">geom_bar</span><span class="hl std">()</span>
+</pre></div>
+</div><div class="rimage default"><img src="figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" class="plot" /></div></div>
+
+
+
+
+  
+</div>    
 </body>
 </html>
