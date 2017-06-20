@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Alguns dados sobre pilotos de Formula 1</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+       <h3></h3>
+<!--begin.rcode
+library(readxl)
+pilotos <- readxl::read_excel("C:/Users/Win7/Documents/arquivosR/pilotos.xlsx")
+pilotos
+end.rcode-->
+
+<p>You can also embed plots, for example:</p>
+
+<!--begin.rcode
+   library(ggplot2)
+   pilotos$pais
+   ggplot(data = pilotos,aes(pais))+ geom_bar()+coord_flip()
+end.rcode-->
+
+</body>
+</html>
