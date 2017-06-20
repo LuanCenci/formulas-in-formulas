@@ -63,8 +63,8 @@
   font-weight: bold;
 }
 </style>
-    <meta charset="Iso-8859-1">
-    <meta http-equiv="Content-Type" content="text/html; charset=Iso-8859-1" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset= utf-8" />
     <title>Alguns dados sobre pilotos de Formula 1</title>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -77,7 +77,7 @@
          <div class="navbar-inner">
              <a class="brand" href="../index.html">Formula In Formulas</a>
              <ul class="nav">
-                 <li><a href="../historico.html">Histórico</a></li>
+                 <li><a href="../historico.html">HistÃ³rico</a></li>
 		             <li><a href="../projetos.html">Artigos</a></li>
 		             <li><a href="../contato.html">Contato</a></li>
              </ul>
@@ -86,35 +86,35 @@
     <div class="span2"></div>    
     <div class="span12">
        <h3 id = "titulo">Alguns dados sobre pilotos de Formula 1</h3>
-       <p class = "texto">Para dar um pontapé inicial neste sitiozinho/blog/diário pessoal/ coisas que eu escrevo e espero que as pessoas gostem, vim trazer alguns dados sobre os pilotos da temporada 2017 do campeonato de formula 1. </p>
-       <p class = "texto">Em muitos casos alguns simples dados sobre os envolvidos no assunto em geral podem nos dizer muito sobre a categoria em si, e como ela está nesta temporada já iniciada a alguns meses.</p>
+       <p class = "texto">Para dar um pontapÃ© inicial neste sitiozinho/blog/diÃ¡rio pessoal/ coisas que eu escrevo e espero que as pessoas gostem, vim trazer alguns dados sobre os pilotos da temporada 2017 do campeonato de formula 1. </p>
+       <p class = "texto">Em muitos casos alguns simples dados sobre os envolvidos no assunto em geral podem nos dizer muito sobre a categoria em si, e como ela estÃ¡ nesta temporada jÃ¡ iniciada a alguns meses.</p>
        <p class="texto"></p>
 <div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(readxl)</span>
 <span class="hl std">pilotos</span> <span class="hl kwb">&lt;-</span> <span class="hl std">readxl</span><span class="hl opt">::</span><span class="hl kwd">read_excel</span><span class="hl std">(</span><span class="hl str">&quot;C:/Users/Win7/Documents/arquivosR/pilotos.xlsx&quot;</span><span class="hl std">)</span>
 <span class="hl std">pilotos</span>
 </pre></div>
-<div class="output"><pre class="knitr r">## # A tibble: 20 × 6
+<div class="output"><pre class="knitr r">## # A tibble: 20 Ã— 6
 ##    numeracao              nome          equipe dataNascimento        pais
 ##        &lt;dbl&gt;             &lt;chr&gt;           &lt;chr&gt;         &lt;dttm&gt;       &lt;chr&gt;
-## 1          2 Stoffel Vandoorne         McLaren     1992-03-26     Bélgica
-## 2          3  Daniel Ricciardo Red Bull Racing     1989-07-01   Austrália
+## 1          2 Stoffel Vandoorne         McLaren     1992-03-26     BÃ©lgica
+## 2          3  Daniel Ricciardo Red Bull Racing     1989-07-01   AustrÃ¡lia
 ## 3          5  Sebastian Vettel         Ferrari     1987-07-03    Alemanha
 ## 4         94   Pascal Wehrlein          Sauber     1994-10-18    Alemanha
 ## 5         77   Valtteri Bottas        Mercedes     1989-08-28   Finlandia
 ## 6         55  Carlos Sainz Jr.      Toro Rosso     1994-09-01     Espanha
 ## 7         44    Lewis Hamilton        Mercedes     1985-01-07 Reino Unido
 ## 8         33    Max Verstappen Red Bull Racing     1997-09-30     Holanda
-## 9         31      Esteban Ocon     Force India     1996-09-17      França
+## 9         31      Esteban Ocon     Force India     1996-09-17      FranÃ§a
 ## 10        30     Jolyon Palmer Renault F1 Team     1991-01-20 Reino Unido
 ## 11        27   Nico Hulkenberg Renault F1 Team     1987-08-19    Alemanha
-## 12        26      Daniil Kvyat      Toro Rosso     1994-04-26      Rússia
+## 12        26      Daniil Kvyat      Toro Rosso     1994-04-26      RÃºssia
 ## 13        20   Kevin Magnussen    Haas F1 Team     1992-10-05   Dinamarca
 ## 14        19      Felipe Massa        Williams     1981-04-25      Brasil
-## 15        18      Lance Stroll        Williams     1998-10-29      Canadá
+## 15        18      Lance Stroll        Williams     1998-10-29      CanadÃ¡
 ## 16        14   Fernando Alonso         McLaren     1981-07-29     Espanha
-## 17        11      Sergio Perez     Force India     1990-01-26      México
-## 18         9   Marcus Ericsson          Sauber     1990-09-02      Suécia
-## 19         8   Romain Grosjean    Haas F1 Team     1986-04-17      França
+## 17        11      Sergio Perez     Force India     1990-01-26      MÃ©xico
+## 18         9   Marcus Ericsson          Sauber     1990-09-02      SuÃ©cia
+## 19         8   Romain Grosjean    Haas F1 Team     1986-04-17      FranÃ§a
 ## 20         7    Kimi Raikkonen         Ferrari     1979-10-17   Finlandia
 ## # ... with 1 more variables: titulos &lt;dbl&gt;
 </pre></div>
@@ -125,10 +125,10 @@
 <div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="source"><pre class="knitr r">   <span class="hl kwd">library</span><span class="hl std">(ggplot2)</span>
    <span class="hl std">pilotos</span><span class="hl opt">$</span><span class="hl std">pais</span>
 </pre></div>
-<div class="output"><pre class="knitr r">##  [1] &quot;Bélgica&quot;     &quot;Austrália&quot;   &quot;Alemanha&quot;    &quot;Alemanha&quot;    &quot;Finlandia&quot;  
-##  [6] &quot;Espanha&quot;     &quot;Reino Unido&quot; &quot;Holanda&quot;     &quot;França&quot;      &quot;Reino Unido&quot;
-## [11] &quot;Alemanha&quot;    &quot;Rússia&quot;      &quot;Dinamarca&quot;   &quot;Brasil&quot;      &quot;Canadá&quot;     
-## [16] &quot;Espanha&quot;     &quot;México&quot;      &quot;Suécia&quot;      &quot;França&quot;      &quot;Finlandia&quot;
+<div class="output"><pre class="knitr r">##  [1] &quot;BÃ©lgica&quot;     &quot;AustrÃ¡lia&quot;   &quot;Alemanha&quot;    &quot;Alemanha&quot;    &quot;Finlandia&quot;  
+##  [6] &quot;Espanha&quot;     &quot;Reino Unido&quot; &quot;Holanda&quot;     &quot;FranÃ§a&quot;      &quot;Reino Unido&quot;
+## [11] &quot;Alemanha&quot;    &quot;RÃºssia&quot;      &quot;Dinamarca&quot;   &quot;Brasil&quot;      &quot;CanadÃ¡&quot;     
+## [16] &quot;Espanha&quot;     &quot;MÃ©xico&quot;      &quot;SuÃ©cia&quot;      &quot;FranÃ§a&quot;      &quot;Finlandia&quot;
 </pre></div>
 <div class="source"><pre class="knitr r">   <span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwc">data</span> <span class="hl std">= pilotos,</span><span class="hl kwd">aes</span><span class="hl std">(pais))</span><span class="hl opt">+</span> <span class="hl kwd">geom_bar</span><span class="hl std">()</span><span class="hl opt">+</span><span class="hl kwd">coord_flip</span><span class="hl std">()</span>
 </pre></div>
