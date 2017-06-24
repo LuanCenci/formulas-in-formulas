@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset= utf-8" />
+    <title>Alguns dados sobre pilotos de Formula 1</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="css/estilo_artigo.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>   
+    <br>
+    <div class="navbar navbar-default">
+         <div class="navbar-inner">
+             <a class="brand" href="../index.html">Formula In Formulas</a>
+             <ul class="nav">
+                 <li><a href="../historico.html">Histórico</a></li>
+		             <li><a href="../projetos.html">Artigos</a></li>
+		             <li><a href="../contato.html">Contato</a></li>
+             </ul>
+     </div>
+    <div class="span2"></div>    
+    <div class="span12">
+       <h3 id = "titulo">Alguns dados sobre pilotos de Formula 1</h3>
+       <p class = "texto">Para dar um pontapé inicial neste sitiozinho/blog/diário pessoal/ coisas que eu escrevo e espero que as pessoas gostem, vim trazer alguns dados sobre os pilotos da temporada 2017 do campeonato de formula 1. </p>
+       <p class = "texto">Em muitos casos alguns simples dados sobre os envolvidos no assunto em geral podem nos dizer muito sobre a categoria em si, e como ela está nesta temporada já iniciada a alguns meses.</p>
+<p class="texto">Esta planilha contem os dados como numeração,data de nascimento e os numeros de títulos:</p>
+<!--begin.rcode
+  pilotos <- readxl::read_excel("C:/Users/Win7/Documents/GitHub/formulas-in-formulas/artigo/pilotos.xlsx")
+pilotos
+end.rcode-->
+
+<p class="texto">Em primeiro momento decidir ver qual os numeros de países e a sua quantidade em numero de pilotos na categoria. e atraves que podem ser representados com os seguintes gráficos:</p>
+<!--begin.rcode
+  library(ggplot2)
+  ggplot(data = pilotos,aes(pais))+ geom_bar()+coord_flip()
+end.rcode-->
+
+<p class="texto">A primeira ideia que podemos ter ao ver o gráfico é que a Alemanha tem o maior numero de pilotos com 3, e França, Reino Unido, Finlândia, e Espanha tem 2 cada, e os outros tem pelo 1 piloto respectivamente. Existindo quase que uma União Europeia na principal categoria do automobilismo.</p>
+
+<p class="texto">É sempre para podermos calcular outro dado que podemos utilizar para sabermos mais sobre os motoristas de alta periculosidade. é sabermos a sua idade, como pode ter sido visto mais acima, temos a data de nascimento de cada piloto em formato americano. Uma função utilizada para calcular a idade dos pilotos é o <b>Difftime</b>, nele podemos entrar com a data, tipo o dia de hoje  ou qualquer outro. Mas o problema disso é que o esta função retorna o resulta em forma entre horas até semana. Já mês e anos, você terá que pelo respectivos numeros de dias de cada um, 30 para meses e 365 para anos.</p>
+
+<!--begin.rcode
+   idade <- as.integer(difftime(Sys.time(),pilotos$dataNascimento,units = "days")/(365))
+   idade
+end.rcode-->
+
+<p class="texto">E o calculo de todos os competidores foi jogado dentro de um vetor, assim posso saber quem é o piloto mais velho e o mais novo. Kimi Raikkonen o mais velho com 37 anos, e o mais novo o canadense Lance Stroll, que além de ser o mais jovem pode ter acabado de tirar a carteira de motorista no Canadá.</p>
+<!--begin.rcode
+  dplyr::filter(pilotos,idade == max(idade))
+end.rcode-->
+<br>
+<!--begin.rcode
+  dplyr::filter(pilotos,idade == min(idade))
+end.rcode-->
+
+<p class="texto">E para saber a média de idade na categoria e qual seria o somatorio de todos os anos. Podemos executar a função mean() e Sum().</p>
+<!--begin.rcode
+  mean(idade);sum(idade)
+end.rcode-->
+
+<p class="texto">Para sabermos qual a quantidade de pilotos que tem mais e mesmo que a idade média. podemos executar a função count que tem no pacote <b>dplyr</b> da tidyverse.</p>
+
+<!--begin.rcode
+    dplyr::count(pilotos,idade < as.integer(mean(idade)))
+end.rcode-->
+<br>
+<p class="texto">E ao montarmos um gráfico de pizza podemos ver mais facilmente a quantidade de pilotos mais jovem do que a média da idades,é maior que a quantidade de pilotos mais velhos que a média.</p>
+
+<!--begin.rcode
+     pie(dplyr::count(pilotos,idade < as.integer(mean(idade)))$n,c('mais velhos','mais novos'))
+end.rcode-->
+
+<p class="texto">Podemos ver que a maioria dos pilos é mais velho do que a média o que pode dizer que boa parte das equipes gosta de pilotos experientes.</p>
+
+<p class="texto">Outra variavel é a quantidade de títulos de todos os pilotos que somados são de dez nesta temporada. Sendo 0,5 a média de títulos desta desta temporada.</p>
+
+<!--begin.rcode
+  pie(dplyr::count(pilotos,titulos==0)$n,c("pilotos com títulos\n atualmente","pilotos sem\n títulos atualmente"))
+end.rcode-->
+
+<p class="texto">Sendo que a quantidade de títulos de dois pilotos pode aumentar.  Já que a disputa está acirrada entre Lewis Hamilton e Sebastian Vettel. mas é algo que  podemos ver mais a frente.</p>
+</body>
+</html>
